@@ -2,7 +2,9 @@ class AdoptionsController < ApplicationController
   before_action :set_tree, only: %i[create new]
 
   def index
-    @adoptions = Adoption.all
+    @adoptions = Adoption.where(user_id: current_user.id)
+    @trees = Tree.all
+    @users = User.all
   end
 
   def new

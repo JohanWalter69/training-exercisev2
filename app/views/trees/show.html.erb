@@ -10,15 +10,19 @@
       <p>Price: <%= @tree.price_per_year %></p>
       <p>Quantity: <%= @tree.quantity_by_year %></p>
       <p>Fruits: <%= @tree.fruits %></p>
-      <p>User-email: <%= @tree.user.email %></p>
-      <div class="d-flex flex-row gap-4">
-        <%= link_to 'Edit this tree', edit_tree_path(@tree), class:"btn btn-primary" %>
-        <%= link_to "Delete this tree",
-          tree_path(@tree), class:"btn btn-primary",
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-        <%= link_to 'Adopt this tree', new_tree_adoption_path(@tree), class:"btn btn-primary" %>
-      </div>
+      <p>Owner-email: <%= @tree.user.email %></p>
+        <% if @tree.user_id == current_user.id %>
+          <div class="d-flex flex-row gap-4">
+            <%= link_to 'Edit this tree', edit_tree_path(@tree), class:"btn btn-primary" %>
+            <%= link_to "Delete this tree",
+              tree_path(@tree), class:"btn btn-primary",
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
+            <%= link_to 'Adopt this tree', new_tree_adoption_path(@tree), class:"btn btn-primary" %>
+        </div>
+        <% else %>
+          <%= link_to 'Adopt this tree', new_tree_adoption_path(@tree), class:"btn btn-primary" %>
+        <% end %>
     </div>
   </div>
 

@@ -8,7 +8,7 @@
   </div>
   <hr>
 
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap justify-content-around">
     <% @trees.each do |tree| %>
       <%= link_to tree_path(tree) do %>
         <div class="card" style="width:400px">

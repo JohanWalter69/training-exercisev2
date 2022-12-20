@@ -7,11 +7,15 @@
 
   <ul>
     <% @adoptions.each do |adoption| %>
-      <div class= "d-flex justify-content-between" style="width: 30vw">
-        <p><%= adoption.starts_at %></p>
-        <p><%= adoption.ends_at %></p>
-        <p><%= adoption.name.upcase %></p>
-        <p><%= adoption.tree_id %></p>
+      <div class= "card d-flex flex-row m-2 mt-3" style="width: 100%">
+        <%= image_tag 'arbre2.jpg', style:"width: 30%" %>
+        <div class="d-flex flex-column m-2">
+          <p><%= @trees.find(adoption.tree_id).name %></p>
+          <p>Begins the: <%= adoption.starts_at %></p>
+          <p>Ends the: <%= adoption.ends_at %></p>
+          <p><%= adoption.name.upcase %></p>
+          <p><%= @users.find(adoption.user_id).email %></p>
+        </div>
       </div>
     <% end %>
   </ul>
