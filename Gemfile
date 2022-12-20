@@ -41,7 +41,7 @@ gem "sassc-rails"
 
 gem "devise"
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+gem "font-awesome-sass", "~> 6.2.1"
 gem "simple_form", github: "heartcombo/simple_form"
 
 ## config to format documents

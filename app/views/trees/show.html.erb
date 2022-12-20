@@ -1,21 +1,22 @@
-<h1><%= @tree.name %></h1>
-<%= link_to 'Edit this tree', edit_tree_path(@tree) %>
-<hr>
-<%= link_to "Delete this tree",
-  tree_path(@tree),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<hr>
-<%= link_to 'Adopt this tree', new_tree_adoption_path(@tree) %>
-<hr>
+<div class="container">
+  <h1><%= @tree.name %></h1>
+  <%= link_to 'Edit this tree', edit_tree_path(@tree), class:"btn btn-primary" %>
+  <hr>
+  <%= link_to "Delete this tree",
+    tree_path(@tree), class:"btn btn-primary",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <hr>
+  <%= link_to 'Adopt this tree', new_tree_adoption_path(@tree), class:"btn btn-primary" %>
 
-<hr>
-<p>Adress: <%= @tree.address %></p>
-<p>Description: <%= @tree.description %></p>
-<p>Price: <%= @tree.price_per_year %></p>
-<p>Quantity: <%= @tree.quantity_by_year %></p>
-<p>Fruits: <%= @tree.fruits %></p>
-<p>User-email: <%= @tree.user.email %></p>
-<hr>
+  <hr>
+  <p>Adress: <%= @tree.address %></p>
+  <p>Description: <%= @tree.description %></p>
+  <p>Price: <%= @tree.price_per_year %></p>
+  <p>Quantity: <%= @tree.quantity_by_year %></p>
+  <p>Fruits: <%= @tree.fruits %></p>
+  <p>User-email: <%= @tree.user.email %></p>
+  <hr>
 
-<%= link_to 'Return to the Trees', root_path(@tree) %>
+  <%= link_to 'Return to the Trees', root_path(@tree), class:"btn btn-primary" %>
+</div>

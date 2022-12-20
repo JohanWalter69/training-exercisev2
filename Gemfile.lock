@@ -293,7 +293,7 @@ DEPENDENCIES
   erb-formatter
   factory_bot_rails
   faker
-  font-awesome-sass (~> 6.1)
+  font-awesome-sass (~> 6.2.1)
   htmlbeautifier
   jbuilder
   jsbundling-rails

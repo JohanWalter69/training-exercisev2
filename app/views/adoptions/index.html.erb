@@ -1,4 +1,8 @@
 <div class="container">
+  <%= link_to root_path(@adoption) do %>
+    <i class="fa-solid fa-circle-arrow-left"></i>
+  <% end %>
+
   <h1>Your adoptions</h1>
 
   <ul>
@@ -7,10 +11,9 @@
         <p><%= adoption.starts_at %></p>
         <p><%= adoption.ends_at %></p>
         <p><%= adoption.name.upcase %></p>
-        <p><%= adoption.id %></p>
+        <p><%= adoption.tree_id %></p>
       </div>
     <% end %>
   </ul>
 
-  <%= link_to 'Return to the trees list', root_path(@adoption) %>
 </div>
