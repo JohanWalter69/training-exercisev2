@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Our available Trees</h1>
+  <hr>
+  <div class="d-flex justify-content-between">
+    <%= link_to "See your adoptions", tree_adoptions_path(@trees), class:"btn btn-primary" %>
+    <%= link_to "Add a Tree", new_tree_path, class:"btn btn-primary" %>
+  </div>
+  <hr>
+
+  <% @trees.each do |tree| %>
+    <%= link_to tree_path(tree) do %>
+      <p><%= tree.name %></p>
+      <%= image_tag 'arbre2.jpg' %>
+      <hr>
+    <% end %>
+  <% end %>
+
+  <hr>
+
+</div>

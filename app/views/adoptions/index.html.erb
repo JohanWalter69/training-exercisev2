@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Your adoptions</h1>
+
+  <ul>
+    <% @adoptions.each do |adoption| %>
+      <div class= "d-flex justify-content-between" style="width: 30vw">
+        <p><%= adoption.starts_at %></p>
+        <p><%= adoption.ends_at %></p>
+        <p><%= adoption.name.upcase %></p>
+        <p><%= adoption.id %></p>
+      </div>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Return to the trees list', root_path(@adoption) %>
+</div>

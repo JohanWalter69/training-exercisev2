@@ -1,0 +1,9 @@
+<%= simple_form_for(@tree) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_year %>
+  <%= f.input :fruits , collection: %w[Apple Apricot Cherry Chestnut Coconut-Tree Fig Grapefruit Hazel Mandarin Mango Mirabellier Mulberry Olivier Orange Pear Plum] %>
+  <%= f.input :quantity_by_year %>
+  <%= f.submit "Create a Tree" %>
+<% end %>

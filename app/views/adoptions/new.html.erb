@@ -1,0 +1,7 @@
+<h1>Would you like to adopt this tree ?</h1>
+<hr>
+
+<%= simple_form_for [ @tree, @adoption ] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Adopt this tree", class: "btn btn-primary" %>
+<% end %>
