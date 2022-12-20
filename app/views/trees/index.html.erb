@@ -1,4 +1,5 @@
 <div class="container">
+
   <h1>Our available Trees</h1>
   <hr>
   <div class="d-flex justify-content-between">
@@ -7,14 +8,18 @@
   </div>
   <hr>
 
-  <% @trees.each do |tree| %>
-    <%= link_to tree_path(tree) do %>
-      <p><%= tree.name %></p>
-      <%= image_tag 'arbre2.jpg' %>
-      <hr>
+  <div class="d-flex flex-wrap">
+    <% @trees.each do |tree| %>
+      <%= link_to tree_path(tree) do %>
+        <div class="card" style="width:400px">
+          <%= image_tag 'arbre2.jpg', class:"card-img-top", style:"width:100%" %>
+          <div class="card-body">
+            <h4 class="card-title text-decoration-none"><%= tree.name %></h4>
+            <p class="card-text text-decoration-none"><%= tree.price_per_year %>€</p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <hr>
+  </div>
 
 </div>
